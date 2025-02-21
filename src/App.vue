@@ -1,32 +1,12 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue';
-import viteLogoUrl from './assets/vite.svg';
-import vueLogoUrl from './assets/vue.svg';
+const open = ref(false)
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img :src="viteLogoUrl" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img :src="vueLogoUrl" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="group absolute right-2 top-1/2 cursor-pointer rounded-full bg-white p-3 shadow transition-transform duration-150 active:scale-90 hover:scale-110" @click="open = true">
+    <div class="i-mdi-settings transition-transform duration-1000 group-hover:rotate-180" />
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <NDialog v-model:open="open">
+    <HelloWorld msg="Vite + Vue" />
+  </NDialog>
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
