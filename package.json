@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vue-tsc -b && vite preview",
+    "release": "bumpp",
+    "prepublishOnly": "nr build",
     "postinstall": "npx simple-git-hooks"
   },
   "dependencies": {
@@ -21,6 +23,7 @@
     "@unocss/eslint-config": "^66.0.0",
     "@unocss/eslint-plugin": "^66.0.0",
     "@vitejs/plugin-vue": "^5.2.1",
+    "bumpp": "^10.0.3",
     "eslint": "^9.20.1",
     "eslint-plugin-format": "^1.0.1",
     "lint-staged": "^15.4.3",
